@@ -57,3 +57,9 @@ O workflow agora executa `python history.py` antes de `predict.py`. Consulta res
 
 ### OpenAI
 Em Settings > Secrets and variables > Actions adicione `OPENAI_API_KEY` como Repository secret. A assinatura ChatGPT Plus não fornece uma API key nem créditos de API. A análise da IA só aparece se o segredo estiver configurado e o serviço responder sem erro.
+
+
+### Correções v7 (25/10/2026)
+- Corrigida a escala percentual do TSE: `s.pst=0,25` corresponde a 0,25%, armazenado como 0.0025.
+- Cores unificadas: `--lula` vermelho e `--flavio` azul, em todos os gráficos e painéis.
+- O GitHub Pages pode levar algum tempo até publicar o commit; para cache do navegador use Ctrl+F5.

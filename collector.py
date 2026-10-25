@@ -46,7 +46,10 @@ def extract(raw, uf):
                 'percent_reported':pct(c.get('pvap',0))})
     if not candidates: raise ValueError(f'Candidatos ausentes no layout EA20 para {uf}: {list(raw)[:20]}')
     summary=raw.get('s') or {}
-    progress=pct(summary['pst']) if 'pst' in summary else None
+    # Prefer exact count ratio; avoids ambiguous pct display scales or stale percentages.
+    ts=num(summary.get('ts'))
+    st=num(summary.get('st'))
+    progress=(st/ts if ts>0 and 0<=st<=ts else pct(summary['pst']) if 'pst' in summary else None)
     return {'uf':uf,'progress':progress,'candidates':sorted(candidates,key=lambda x:-x['votes']),
             'source_timestamp': ' '.join(x for x in [raw.get('dg',''),raw.get('hg','')] if x) or None}
 
