@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-25T20:40:42.421804+00:00",
+  "updated_at": "2026-10-25T21:18:05.208159+00:00",
   "source": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados",
   "election": "Presidente do Brasil — 2º turno 2026",
   "national": {
     "uf": "BR",
-    "progress": 0.25,
+    "progress": 0.0024536903502868313,
     "candidates": [
       {
         "name": "LULA",
@@ -100,7 +100,7 @@
     },
     {
       "uf": "BA",
-      "progress": 0.02,
+      "progress": 0.00016912842485060324,
       "candidates": [
         {
           "name": "LULA",
@@ -119,7 +119,7 @@
     },
     {
       "uf": "CE",
-      "progress": 0.02,
+      "progress": 0.0001683147485798443,
       "candidates": [
         {
           "name": "LULA",
@@ -176,7 +176,7 @@
     },
     {
       "uf": "GO",
-      "progress": 0.04,
+      "progress": 0.0003825066938671427,
       "candidates": [
         {
           "name": "FLAVIO BOLSONARO",
@@ -195,7 +195,7 @@
     },
     {
       "uf": "MA",
-      "progress": 0.11,
+      "progress": 0.0010501298844857127,
       "candidates": [
         {
           "name": "LULA",
@@ -271,7 +271,7 @@
     },
     {
       "uf": "PA",
-      "progress": 0.86,
+      "progress": 0.008594612762279734,
       "candidates": [
         {
           "name": "LULA",
