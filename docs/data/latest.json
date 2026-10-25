@@ -536,5 +536,15 @@
       "source_timestamp": "25/10/2026 20:31:36"
     }
   ],
-  "errors": []
+  "errors": [],
+  "last_collection_error_at": "2026-10-25T23:37:36.783878+00:00",
+  "last_collection_errors": [
+    "CE: URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
+    "AM: URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
+    "AP: URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
+    "BA: URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
+    "AC: URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
+    "AL: URLError: <urlopen error _ssl.c:993: The handshake operation timed out>",
+    "BR: URLError: <urlopen error _ssl.c:993: The handshake operation timed out>"
+  ]
 }
