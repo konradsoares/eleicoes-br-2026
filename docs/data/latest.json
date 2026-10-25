@@ -1,37 +1,540 @@
 {
-  "updated_at": "2026-10-25T20:06:14.885943+00:00",
-  "source": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados",
+  "updated_at": "2026-10-25T20:18:23.283035+00:00",
+  "source": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados",
   "election": "Presidente do Brasil — 2º turno 2026",
-  "national": null,
-  "states": [],
-  "errors": [
-    "BR: ValueError: Formato de candidatos não reconhecido para BR. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'",
-    "AM: ValueError: Formato de candidatos não reconhecido para AM. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'",
-    "CE: ValueError: Formato de candidatos não reconhecido para CE. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'",
-    "BA: ValueError: Formato de candidatos não reconhecido para BA. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'",
-    "AP: ValueError: Formato de candidatos não reconhecido para AP. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'",
-    "DF: ValueError: Formato de candidatos não reconhecido para DF. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'",
-    "AC: ValueError: Formato de candidatos não reconhecido para AC. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'",
-    "GO: ValueError: Formato de candidatos não reconhecido para GO. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'",
-    "AL: ValueError: Formato de candidatos não reconhecido para AL. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'",
-    "MS: ValueError: Formato de candidatos não reconhecido para MS. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'",
-    "MT: ValueError: Formato de candidatos não reconhecido para MT. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'",
-    "ES: ValueError: Formato de candidatos não reconhecido para ES. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'",
-    "PE: ValueError: Formato de candidatos não reconhecido para PE. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'",
-    "MG: ValueError: Formato de candidatos não reconhecido para MG. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'",
-    "PA: ValueError: Formato de candidatos não reconhecido para PA. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'",
-    "MA: ValueError: Formato de candidatos não reconhecido para MA. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'",
-    "PR: ValueError: Formato de candidatos não reconhecido para PR. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'",
-    "PB: ValueError: Formato de candidatos não reconhecido para PB. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'",
-    "PI: ValueError: Formato de candidatos não reconhecido para PI. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'",
-    "RN: ValueError: Formato de candidatos não reconhecido para RN. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'",
-    "RJ: ValueError: Formato de candidatos não reconhecido para RJ. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'",
-    "RR: ValueError: Formato de candidatos não reconhecido para RR. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'",
-    "SE: ValueError: Formato de candidatos não reconhecido para SE. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'",
-    "SP: ValueError: Formato de candidatos não reconhecido para SP. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'",
-    "RS: ValueError: Formato de candidatos não reconhecido para RS. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'",
-    "RO: ValueError: Formato de candidatos não reconhecido para RO. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'",
-    "TO: ValueError: Formato de candidatos não reconhecido para TO. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'",
-    "SC: ValueError: Formato de candidatos não reconhecido para SC. Campos: ['ele', 't', 'f', 'sup', 'tpabr', 'cdabr', 'dg', 'hg', 'idg', 'dt', 'ht', 'dv', 'tf', 'and', 'esae', 'mnae', 'carg', 's', 'e'"
-  ]
+  "national": {
+    "uf": "BR",
+    "progress": 0.25,
+    "candidates": [
+      {
+        "name": "LULA",
+        "number": "13",
+        "votes": 193574,
+        "percent_reported": 0.5766
+      },
+      {
+        "name": "FLAVIO BOLSONARO",
+        "number": "22",
+        "votes": 142169,
+        "percent_reported": 0.42340000000000005
+      }
+    ],
+    "source_timestamp": "25/10/2026 17:06:31"
+  },
+  "states": [
+    {
+      "uf": "AC",
+      "progress": 0.0,
+      "candidates": [
+        {
+          "name": "FLAVIO BOLSONARO",
+          "number": "22",
+          "votes": 0,
+          "percent_reported": 0.0
+        },
+        {
+          "name": "LULA",
+          "number": "13",
+          "votes": 0,
+          "percent_reported": 0.0
+        }
+      ],
+      "source_timestamp": "13/10/2026 17:42:47"
+    },
+    {
+      "uf": "AL",
+      "progress": 0.0,
+      "candidates": [
+        {
+          "name": "FLAVIO BOLSONARO",
+          "number": "22",
+          "votes": 0,
+          "percent_reported": 0.0
+        },
+        {
+          "name": "LULA",
+          "number": "13",
+          "votes": 0,
+          "percent_reported": 0.0
+        }
+      ],
+      "source_timestamp": "13/10/2026 17:42:57"
+    },
+    {
+      "uf": "AM",
+      "progress": 0.0,
+      "candidates": [
+        {
+          "name": "FLAVIO BOLSONARO",
+          "number": "22",
+          "votes": 0,
+          "percent_reported": 0.0
+        },
+        {
+          "name": "LULA",
+          "number": "13",
+          "votes": 0,
+          "percent_reported": 0.0
+        }
+      ],
+      "source_timestamp": "13/10/2026 17:43:07"
+    },
+    {
+      "uf": "AP",
+      "progress": 0.0,
+      "candidates": [
+        {
+          "name": "FLAVIO BOLSONARO",
+          "number": "22",
+          "votes": 0,
+          "percent_reported": 0.0
+        },
+        {
+          "name": "LULA",
+          "number": "13",
+          "votes": 0,
+          "percent_reported": 0.0
+        }
+      ],
+      "source_timestamp": "13/10/2026 17:43:17"
+    },
+    {
+      "uf": "BA",
+      "progress": 0.02,
+      "candidates": [
+        {
+          "name": "LULA",
+          "number": "13",
+          "votes": 1148,
+          "percent_reported": 0.722
+        },
+        {
+          "name": "FLAVIO BOLSONARO",
+          "number": "22",
+          "votes": 442,
+          "percent_reported": 0.278
+        }
+      ],
+      "source_timestamp": "25/10/2026 17:07:00"
+    },
+    {
+      "uf": "CE",
+      "progress": 0.02,
+      "candidates": [
+        {
+          "name": "LULA",
+          "number": "13",
+          "votes": 782,
+          "percent_reported": 0.7001000000000001
+        },
+        {
+          "name": "FLAVIO BOLSONARO",
+          "number": "22",
+          "votes": 335,
+          "percent_reported": 0.2999
+        }
+      ],
+      "source_timestamp": "25/10/2026 17:07:00"
+    },
+    {
+      "uf": "DF",
+      "progress": 0.0,
+      "candidates": [
+        {
+          "name": "FLAVIO BOLSONARO",
+          "number": "22",
+          "votes": 0,
+          "percent_reported": 0.0
+        },
+        {
+          "name": "LULA",
+          "number": "13",
+          "votes": 0,
+          "percent_reported": 0.0
+        }
+      ],
+      "source_timestamp": "09/10/2026 17:30:52"
+    },
+    {
+      "uf": "ES",
+      "progress": 0.0,
+      "candidates": [
+        {
+          "name": "FLAVIO BOLSONARO",
+          "number": "22",
+          "votes": 0,
+          "percent_reported": 0.0
+        },
+        {
+          "name": "LULA",
+          "number": "13",
+          "votes": 0,
+          "percent_reported": 0.0
+        }
+      ],
+      "source_timestamp": "13/10/2026 17:45:07"
+    },
+    {
+      "uf": "GO",
+      "progress": 0.04,
+      "candidates": [
+        {
+          "name": "FLAVIO BOLSONARO",
+          "number": "22",
+          "votes": 943,
+          "percent_reported": 0.5511
+        },
+        {
+          "name": "LULA",
+          "number": "13",
+          "votes": 768,
+          "percent_reported": 0.4489
+        }
+      ],
+      "source_timestamp": "25/10/2026 17:07:00"
+    },
+    {
+      "uf": "MA",
+      "progress": 0.11,
+      "candidates": [
+        {
+          "name": "LULA",
+          "number": "13",
+          "votes": 2228,
+          "percent_reported": 0.7585999999999999
+        },
+        {
+          "name": "FLAVIO BOLSONARO",
+          "number": "22",
+          "votes": 709,
+          "percent_reported": 0.2414
+        }
+      ],
+      "source_timestamp": "25/10/2026 17:07:00"
+    },
+    {
+      "uf": "MG",
+      "progress": 0.0,
+      "candidates": [
+        {
+          "name": "FLAVIO BOLSONARO",
+          "number": "22",
+          "votes": 0,
+          "percent_reported": 0.0
+        },
+        {
+          "name": "LULA",
+          "number": "13",
+          "votes": 0,
+          "percent_reported": 0.0
+        }
+      ],
+      "source_timestamp": "13/10/2026 17:46:47"
+    },
+    {
+      "uf": "MS",
+      "progress": 0.0,
+      "candidates": [
+        {
+          "name": "FLAVIO BOLSONARO",
+          "number": "22",
+          "votes": 0,
+          "percent_reported": 0.0
+        },
+        {
+          "name": "LULA",
+          "number": "13",
+          "votes": 0,
+          "percent_reported": 0.0
+        }
+      ],
+      "source_timestamp": "13/10/2026 17:46:57"
+    },
+    {
+      "uf": "MT",
+      "progress": 0.0,
+      "candidates": [
+        {
+          "name": "FLAVIO BOLSONARO",
+          "number": "22",
+          "votes": 0,
+          "percent_reported": 0.0
+        },
+        {
+          "name": "LULA",
+          "number": "13",
+          "votes": 0,
+          "percent_reported": 0.0
+        }
+      ],
+      "source_timestamp": "13/10/2026 17:47:07"
+    },
+    {
+      "uf": "PA",
+      "progress": 0.86,
+      "candidates": [
+        {
+          "name": "LULA",
+          "number": "13",
+          "votes": 22949,
+          "percent_reported": 0.6503
+        },
+        {
+          "name": "FLAVIO BOLSONARO",
+          "number": "22",
+          "votes": 12343,
+          "percent_reported": 0.3497
+        }
+      ],
+      "source_timestamp": "25/10/2026 17:07:00"
+    },
+    {
+      "uf": "PB",
+      "progress": 0.0,
+      "candidates": [
+        {
+          "name": "FLAVIO BOLSONARO",
+          "number": "22",
+          "votes": 0,
+          "percent_reported": 0.0
+        },
+        {
+          "name": "LULA",
+          "number": "13",
+          "votes": 0,
+          "percent_reported": 0.0
+        }
+      ],
+      "source_timestamp": "13/10/2026 17:48:07"
+    },
+    {
+      "uf": "PE",
+      "progress": 0.0,
+      "candidates": [
+        {
+          "name": "FLAVIO BOLSONARO",
+          "number": "22",
+          "votes": 0,
+          "percent_reported": 0.0
+        },
+        {
+          "name": "LULA",
+          "number": "13",
+          "votes": 0,
+          "percent_reported": 0.0
+        }
+      ],
+      "source_timestamp": "25/10/2026 17:07:00"
+    },
+    {
+      "uf": "PI",
+      "progress": 0.0,
+      "candidates": [
+        {
+          "name": "FLAVIO BOLSONARO",
+          "number": "22",
+          "votes": 0,
+          "percent_reported": 0.0
+        },
+        {
+          "name": "LULA",
+          "number": "13",
+          "votes": 0,
+          "percent_reported": 0.0
+        }
+      ],
+      "source_timestamp": "13/10/2026 17:48:27"
+    },
+    {
+      "uf": "PR",
+      "progress": 0.0,
+      "candidates": [
+        {
+          "name": "FLAVIO BOLSONARO",
+          "number": "22",
+          "votes": 0,
+          "percent_reported": 0.0
+        },
+        {
+          "name": "LULA",
+          "number": "13",
+          "votes": 0,
+          "percent_reported": 0.0
+        }
+      ],
+      "source_timestamp": "13/10/2026 17:48:38"
+    },
+    {
+      "uf": "RJ",
+      "progress": 0.0,
+      "candidates": [
+        {
+          "name": "FLAVIO BOLSONARO",
+          "number": "22",
+          "votes": 0,
+          "percent_reported": 0.0
+        },
+        {
+          "name": "LULA",
+          "number": "13",
+          "votes": 0,
+          "percent_reported": 0.0
+        }
+      ],
+      "source_timestamp": "13/10/2026 17:48:47"
+    },
+    {
+      "uf": "RN",
+      "progress": 0.0,
+      "candidates": [
+        {
+          "name": "FLAVIO BOLSONARO",
+          "number": "22",
+          "votes": 0,
+          "percent_reported": 0.0
+        },
+        {
+          "name": "LULA",
+          "number": "13",
+          "votes": 0,
+          "percent_reported": 0.0
+        }
+      ],
+      "source_timestamp": "13/10/2026 17:48:57"
+    },
+    {
+      "uf": "RO",
+      "progress": 0.0,
+      "candidates": [
+        {
+          "name": "FLAVIO BOLSONARO",
+          "number": "22",
+          "votes": 0,
+          "percent_reported": 0.0
+        },
+        {
+          "name": "LULA",
+          "number": "13",
+          "votes": 0,
+          "percent_reported": 0.0
+        }
+      ],
+      "source_timestamp": "13/10/2026 17:49:07"
+    },
+    {
+      "uf": "RR",
+      "progress": 0.0,
+      "candidates": [
+        {
+          "name": "FLAVIO BOLSONARO",
+          "number": "22",
+          "votes": 0,
+          "percent_reported": 0.0
+        },
+        {
+          "name": "LULA",
+          "number": "13",
+          "votes": 0,
+          "percent_reported": 0.0
+        }
+      ],
+      "source_timestamp": "13/10/2026 17:49:17"
+    },
+    {
+      "uf": "RS",
+      "progress": 0.0,
+      "candidates": [
+        {
+          "name": "FLAVIO BOLSONARO",
+          "number": "22",
+          "votes": 0,
+          "percent_reported": 0.0
+        },
+        {
+          "name": "LULA",
+          "number": "13",
+          "votes": 0,
+          "percent_reported": 0.0
+        }
+      ],
+      "source_timestamp": "13/10/2026 17:49:27"
+    },
+    {
+      "uf": "SC",
+      "progress": 0.0,
+      "candidates": [
+        {
+          "name": "FLAVIO BOLSONARO",
+          "number": "22",
+          "votes": 0,
+          "percent_reported": 0.0
+        },
+        {
+          "name": "LULA",
+          "number": "13",
+          "votes": 0,
+          "percent_reported": 0.0
+        }
+      ],
+      "source_timestamp": "13/10/2026 17:49:37"
+    },
+    {
+      "uf": "SE",
+      "progress": 0.0,
+      "candidates": [
+        {
+          "name": "FLAVIO BOLSONARO",
+          "number": "22",
+          "votes": 0,
+          "percent_reported": 0.0
+        },
+        {
+          "name": "LULA",
+          "number": "13",
+          "votes": 0,
+          "percent_reported": 0.0
+        }
+      ],
+      "source_timestamp": "24/10/2026 19:32:12"
+    },
+    {
+      "uf": "SP",
+      "progress": 0.0,
+      "candidates": [
+        {
+          "name": "FLAVIO BOLSONARO",
+          "number": "22",
+          "votes": 0,
+          "percent_reported": 0.0
+        },
+        {
+          "name": "LULA",
+          "number": "13",
+          "votes": 0,
+          "percent_reported": 0.0
+        }
+      ],
+      "source_timestamp": "13/10/2026 17:50:07"
+    },
+    {
+      "uf": "TO",
+      "progress": 0.0,
+      "candidates": [
+        {
+          "name": "FLAVIO BOLSONARO",
+          "number": "22",
+          "votes": 0,
+          "percent_reported": 0.0
+        },
+        {
+          "name": "LULA",
+          "number": "13",
+          "votes": 0,
+          "percent_reported": 0.0
+        }
+      ],
+      "source_timestamp": "25/10/2026 15:40:09"
+    }
+  ],
+  "errors": []
 }
