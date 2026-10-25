@@ -2,6 +2,22 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
 <style>
 :root{--bg:#080e1b;--panel:#101b2e;--muted:#98a9c0;--border:#23334b;--blue:#4ba4fe;--red:#ff697e;--green:#4bd7aa}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 70% -20%,#1e3357 0%,var(--bg) 60%);font:15px system-ui,-apple-system,Segoe UI,Arial;color:#eaf1fa}main{max-width:1220px;margin:auto;padding:30px 22px 60px}header{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:28px}h1{font-size:27px;letter-spacing:-.8px;margin:4px 0}.sub,.note,small{color:var(--muted)}.eyebrow{color:#91baff;font-weight:800;font-size:11px;letter-spacing:2px}.pill{border:1px solid var(--border);background:var(--panel);border-radius:40px;padding:10px 16px;color:#e3edff}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.card{border:1px solid var(--border);background:linear-gradient(135deg,#132238,#0e1829);border-radius:17px;padding:22px;min-width:0}.wide{grid-column:span 2}.full{grid-column:1/-1}.lbl{color:var(--muted);font-size:13px}.big{font-size:32px;font-weight:750;letter-spacing:-1px;margin:10px 0 4px}.candidate{display:flex;justify-content:space-between;align-items:center;gap:10px}.candidate strong{font-size:23px}.track{height:11px;border-radius:30px;background:#263955;overflow:hidden;margin:17px 0}.fill{height:100%;background:var(--blue);width:0;transition:width .4s}.fill.red{background:var(--red)}.barline{display:flex;gap:3px;overflow:hidden;border-radius:9px;margin:15px 0;height:21px}.barline div:first-child{background:var(--blue)}.barline div:last-child{background:var(--red)}.gauge{height:112px;position:relative;display:grid;place-items:center}.ring{width:108px;height:108px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--green) 0 var(--amount,0%),#263955 0)}.ring::after{content:'';width:82px;height:82px;border-radius:50%;background:#112035;position:absolute}.ring span{z-index:1;font-size:19px;font-weight:800}.state-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.state{border:1px solid var(--border);border-radius:12px;padding:10px;display:flex;align-items:center;justify-content:space-between;font-size:13px}.stat{font-size:27px;font-weight:800}.warn{background:#30251a;color:#ffd6a0;border:1px solid #594025;padding:12px 15px;border-radius:9px;margin:10px 0 20px}canvas{max-height:240px}button{background:#233b5a;color:white;border:1px solid #3d5673;border-radius:9px;padding:9px 13px;cursor:pointer}@media(max-width:880px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.state-list{grid-template-columns:repeat(2,1fr)}}@media(max-width:550px){main{padding:20px 12px}.grid{grid-template-columns:1fr}.wide,.full{grid-column:span 1}.state-list{grid-template-columns:repeat(2,1fr)}h1{font-size:23px}}
+
+/* Comparação completa por estado */
+.state-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.state{display:block;padding:14px 16px;min-width:0}
+.state-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:11px}
+.state-heading b{font-size:15px}
+.state-heading small{font-size:12px}
+.state-candidates{display:flex;justify-content:space-between;gap:12px;font-size:13px}
+.state-candidates .lula{color:var(--blue)}
+.state-candidates .flavio{color:var(--red);text-align:right}
+.state-candidates strong{display:block;font-size:17px;color:#eaf1fa}
+.state-compare{display:flex;overflow:hidden;border-radius:8px;height:9px;background:#263955;margin:9px 0 7px}
+.state-compare .lula-bar{background:var(--blue)}
+.state-compare .flavio-bar{background:var(--red)}
+.state-votes{font-size:11px;color:var(--muted)}
+@media(max-width:650px){.state-list{grid-template-columns:1fr}}
 </style></head><body><main><header><div><div class="eyebrow">OBSERVATÓRIO ELEITORAL · BRASIL 2026</div><h1>Apuração presidencial — 2º turno</h1><div class="sub">Resultados TSE · projeções condicionais · análise quantitativa</div></div><div><span class="pill" id="status">● Aguardando dados</span> <button onclick="load()">Atualizar</button></div></header>
 <div id="warning" class="warn">Nenhum resultado ao vivo foi carregado. O painel não exibirá números fictícios.</div>
 <section class="grid"><article class="card wide"><div class="lbl">Lula · votos oficiais</div><div class="candidate"><strong id="l-share">—</strong><div id="l-votes" class="sub">— votos</div></div><div class="track"><div class="fill" id="l-bar"></div></div><div class="lbl">Percentual dos votos válidos já totalizados</div></article><article class="card wide"><div class="lbl">Flávio Bolsonaro · votos oficiais</div><div class="candidate"><strong id="b-share">—</strong><div id="b-votes" class="sub">— votos</div></div><div class="track"><div class="fill red" id="b-bar"></div></div><div class="lbl">Percentual dos votos válidos já totalizados</div></article>
@@ -42,7 +58,30 @@ async function load(){const [d,p,c,polls]=await Promise.all([get('data/latest.js
  [['l',lv],['b',bv]].forEach(([id,v])=>{$(id+'-share').textContent=pc(v/total);$(id+'-votes').textContent=nf.format(v)+' votos';$(id+'-bar').style.width=v/total*100+'%'})
  $('progress').textContent=pc(n.progress);$('progress-gauge').style.setProperty('--amount',((n.progress||0)*100)+'%');$('total').textContent=nf.format(total);
  $('states').innerHTML='';let labels=[],lvalues=[],bvalues=[];
- (d.states||[]).sort((a,b)=>a.uf.localeCompare(b.uf)).forEach(s=>{let l=votes(s,'lula|luiz in'),b=votes(s,'bolsonaro|fl.vio'),t=l+b;let el=document.createElement('div');el.className='state';el.innerHTML='<b>'+s.uf+'</b><span>'+ (t?pc(b/t)+' Flávio':'Sem votos')+'</span><small>'+pc(s.progress)+'</small>';$('states').append(el);if(t){labels.push(s.uf);lvalues.push(l/t*100);bvalues.push(b/t*100)}});
+ (d.states||[]).sort((a,b)=>a.uf.localeCompare(b.uf)).forEach(s=>{
+  const l=votes(s,'lula|luiz in'), b=votes(s,'bolsonaro|fl.vio'), t=l+b;
+  const el=document.createElement('div');el.className='state';
+  const heading=document.createElement('div');heading.className='state-heading';
+  const uf=document.createElement('b');uf.textContent=s.uf;
+  const progress=document.createElement('small');progress.textContent='Apuração: '+pc(s.progress);
+  heading.append(uf,progress);el.append(heading);
+  if(t){
+    const comparison=document.createElement('div');comparison.className='state-candidates';
+    const lula=document.createElement('span');lula.className='lula';lula.innerHTML='Lula<strong>'+pc(l/t)+'</strong>';
+    const flavio=document.createElement('span');flavio.className='flavio';flavio.innerHTML='Flávio<strong>'+pc(b/t)+'</strong>';
+    comparison.append(lula,flavio);el.append(comparison);
+    const bar=document.createElement('div');bar.className='state-compare';
+    const left=document.createElement('div');left.className='lula-bar';left.style.width=(100*l/t)+'%';
+    const right=document.createElement('div');right.className='flavio-bar';right.style.width=(100*b/t)+'%';
+    bar.append(left,right);el.append(bar);
+    const totals=document.createElement('div');totals.className='state-votes';
+    totals.textContent=nf.format(l)+' votos Lula · '+nf.format(b)+' votos Flávio';el.append(totals);
+    labels.push(s.uf);lvalues.push(l/t*100);bvalues.push(b/t*100);
+  }else{
+    const empty=document.createElement('div');empty.className='sub';empty.textContent='Sem votos contabilizados';el.append(empty);
+  }
+  $('states').append(el);
+});
  if(window.Chart){if(chart)chart.destroy();chart=new Chart($('chart'),{type:'bar',data:{labels,datasets:[{label:'Lula',data:lvalues,backgroundColor:'#4ba4fe'},{label:'Flávio',data:bvalues,backgroundColor:'#ff697e'}]},options:{responsive:true,plugins:{legend:{labels:{color:'#bbcadb'}}},scales:{x:{ticks:{color:'#a7b8ca'}},y:{max:100,ticks:{color:'#a7b8ca'}}}}})}
  $('l-prob').textContent=p?.available?pc(p.simulation_frequency_lula):'—';$('b-prob').textContent=p?.available?pc(p.simulation_frequency_bolsonaro):'—';
  $('projected').textContent=p?.available?pc(p.bolsonaro_projected_share):'—';$('projected-bar').style.width=p?.available?p.bolsonaro_projected_share*100+'%':'0%';$('interval').textContent=p?.available?'Faixa de 90% dos cenários: '+p.interval_90.map(pc).join(' – '):p?.reason||'Histórico e apuração estadual ainda insuficientes';
