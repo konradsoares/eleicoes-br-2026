@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 
 ROOT=Path(__file__).resolve().parent
 OUT=ROOT/'docs/data/latest.json'
-BASE=os.getenv('TSE_BASE','https://resultados.tse.jus.br/oficial/ele2026/6257/dados')
+BASE=os.getenv('TSE_BASE','https://resultados.tse.jus.br/oficial/ele2026/6258/dados')
 UFS='AC AL AM AP BA CE DF ES GO MA MG MS MT PA PB PE PI PR RJ RN RO RR RS SC SE SP TO'.split()
 
 def fetch(url):
@@ -26,34 +26,34 @@ def pct(x):
     except (ValueError,TypeError):return 0
 
 def extract(raw, uf):
-    # Layout usado pelo Divulga/TSE: carper[].cand[] (2022) e variantes por eleição.
-    blocks=raw.get('carper') or raw.get('carg') or []
-    if isinstance(blocks,dict):blocks=[blocks]
-    candidates=[]; prog=None
+    """EA20 (2026): carg -> agr -> par -> cand; 0% is still a valid snapshot."""
+    blocks=raw.get('carg') or raw.get('carper') or []
+    if isinstance(blocks,dict): blocks=[blocks]
+    candidates=[]
     for block in blocks:
-        if not isinstance(block,dict):continue
-        if str(block.get('cd',block.get('codigo','1'))).lstrip('0') not in ('1',''):continue
+        if not isinstance(block,dict) or str(block.get('cd','1')).lstrip('0') not in ('1',''): continue
         entries=block.get('cand') or block.get('candidatos') or []
-        if isinstance(entries,dict):entries=list(entries.values())
+        for agr in block.get('agr',[]):
+            entries.extend(agr.get('cand') or [])
+            for party in agr.get('par',[]):
+                entries.extend(party.get('cand') or [])
         for c in entries:
-            if not isinstance(c,dict):continue
-            v=num(c.get('vap',c.get('votos',c.get('vt',0))))
-            name=c.get('nm') or c.get('nome') or c.get('n') or ''
-            if name and (v>0 or c.get('pvap')):
-                candidates.append({'name':str(name),'number':str(c.get('n',c.get('sqcand',''))),'votes':v,'percent_reported':pct(c.get('pvap',0))})
-        prog=block.get('pst') or block.get('psi') or block.get('pse') or prog
-    if not candidates:
-        raise ValueError(f'Formato de candidatos não reconhecido para {uf}. Campos: {list(raw)[:20]}')
-    # pct processed can be published on root or block; never infer from candidate percentage.
-    progress= next((pct(raw.get(k)) for k in ('pst','psi','pse') if raw.get(k) is not None),None)
-    if progress is None and prog is not None:progress=pct(prog)
+            if not isinstance(c,dict): continue
+            name=c.get('nmu') or c.get('nm') or c.get('nome') or ''
+            if not name: continue
+            candidates.append({'name':str(name),'number':str(c.get('n','')),
+                'votes':num(c.get('vap',c.get('votos',0))),
+                'percent_reported':pct(c.get('pvap',0))})
+    if not candidates: raise ValueError(f'Candidatos ausentes no layout EA20 para {uf}: {list(raw)[:20]}')
+    summary=raw.get('s') or {}
+    progress=pct(summary['pst']) if 'pst' in summary else None
     return {'uf':uf,'progress':progress,'candidates':sorted(candidates,key=lambda x:-x['votes']),
-            'source_timestamp':raw.get('ht') or raw.get('dt') or raw.get('ts') or None}
+            'source_timestamp': ' '.join(x for x in [raw.get('dg',''),raw.get('hg','')] if x) or None}
 
 def main():
     now=datetime.now(timezone.utc).isoformat()
     result={'updated_at':now,'source':BASE,'election':'Presidente do Brasil — 2º turno 2026','national':None,'states':[], 'errors':[]}
-    locations=[('BR',f'{BASE}/br/br-c0001-e006257-u.json')]+[(uf,f'{BASE}/{uf.lower()}/{uf.lower()}-c0001-e006257-u.json') for uf in UFS]
+    locations=[('BR',f'{BASE}/br/br-c0001-e006258-u.json')]+[(uf,f'{BASE}/{uf.lower()}/{uf.lower()}-c0001-e006258-u.json') for uf in UFS]
     def collect(entry):
         uf,url=entry
         try:return uf,extract(fetch(url),uf),None
@@ -78,5 +78,6 @@ def main():
             return
     OUT.write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
     print('Estados:',len(result['states']),'Erros:',len(result['errors']))
+    for err in result['errors'][:10]: print('  ',err)
 
 if __name__=='__main__': main()
