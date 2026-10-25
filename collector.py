@@ -22,7 +22,7 @@ def num(x):
 def pct(x):
     try:
         f=float(str(x).replace(',','.'))
-        return f/100 if f>1 else f
+        return f / 100  # O TSE informa porcentagem (ex.: '0,25' significa 0,25%, não 25%)
     except (ValueError,TypeError):return 0
 
 def extract(raw, uf):

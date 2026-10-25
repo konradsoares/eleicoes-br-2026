@@ -1,93 +1,126 @@
 #!/usr/bin/env python3
-"""Automatic historical TSE bootstrap. Best effort; fails closed on missing data."""
-import csv,json,re,urllib.request
+"""One-time TSE open-data bootstrap for presidential runoff UF totals (2018/2022).
+Downloads official municipality/zone data, processes _BR.csv and caches a 27-UF CSV.
+Run again safely: completed caches are never downloaded again.
+"""
+import csv
+import io
+import json
+import os
+import shutil
+import tempfile
+import urllib.request
+import zipfile
+from collections import defaultdict
 from pathlib import Path
-from concurrent.futures import ThreadPoolExecutor,as_completed
-ROOT=Path(__file__).resolve().parent
-UFS='AC AL AM AP BA CE DF ES GO MA MG MS MT PA PB PE PI PR RJ RN RO RR RS SC SE SP TO'.split()
 
-def request(url):
-    req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0 EleicoesPublicas/1.0','Accept':'application/json,text/javascript,*/*'})
-    with urllib.request.urlopen(req,timeout=14) as r: raw=r.read().decode('utf-8-sig')
-    try:return json.loads(raw)
-    except json.JSONDecodeError:
-        begin=raw.find('{'); end=raw.rfind('}')
-        if begin<0 or end<begin:raise
-        return json.loads(raw[begin:end+1])
+ROOT = Path(__file__).resolve().parent
+UFS = set('AC AL AM AP BA CE DF ES GO MA MG MS MT PA PB PE PI PR RJ RN RO RR RS SC SE SP TO'.split())
+API = 'https://dadosabertos.tse.jus.br/api/3/action/package_show?id=resultados-{}'
+# Official archive mirrors. Fall back to resource URL discovered from TSE CKAN API.
+MIRRORS = {
+    2018: 'https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_candidato_munzona/votacao_candidato_munzona_2018.zip',
+    2022: 'https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_candidato_munzona/votacao_candidato_munzona_2022.zip',
+}
 
-def integer(value):
-    try:return int(str(value).replace('.','').replace(',',''))
-    except (ValueError,TypeError):return 0
+def open_url(url, timeout=55):
+    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (compatible; PublicElectoralStats/1.0)'})
+    return urllib.request.urlopen(req, timeout=timeout)
 
-def find_candidates(obj):
-    """Match commonly published TSE formats, avoid double-counting nested totals."""
-    if isinstance(obj,dict):
-        for key in ('cand','candidatos'):
-            arr=obj.get(key)
-            if isinstance(arr,list) and arr and all(isinstance(x,dict) for x in arr):
-                if any('vap' in c for c in arr):return arr
-        for key in ('carg','carper','agr','par','resultado','dados'):
-            child=obj.get(key)
-            if child is not None:
-                found=find_candidates(child)
-                if found:return found
-    if isinstance(obj,list):
-        for x in obj:
-            found=find_candidates(x)
-            if found:return found
-    return []
-
-def extract(data,uf,year):
-    cand=find_candidates(data)
-    def is_b(c):
-        name=' '.join(str(c.get(k,'')) for k in ('nm','nmu','nome','n')).lower()
-        return 'bolsonaro' in name or str(c.get('n',''))=='22'
-    def is_l(c):
-        name=' '.join(str(c.get(k,'')) for k in ('nm','nmu','nome','n')).lower()
-        return 'lula' in name or 'haddad' in name or str(c.get('n',''))=='13'
-    b=sum(integer(c.get('vap',c.get('votos',0))) for c in cand if is_b(c))
-    other=sum(integer(c.get('vap',c.get('votos',0))) for c in cand if is_l(c))
-    total=b+other
-    if total<=0 or b<=0 or other<=0:raise ValueError(f'{year}/{uf}: cannot identify both candidates ({len(cand)} entries)')
-    return {'uf':uf,'bolsonaro_pct':round(b/total*100,8),'total_valid':total}
-
-def get_one(year,uf):
-    lower=uf.lower()
-    if year==2022:
-        urls=[f'https://resultados.tse.jus.br/oficial/ele2022/545/dados-simplificados/{lower}/{lower}-c0001-e000545-r.json',
-              f'https://resultados.tse.jus.br/oficial/ele2022/545/dados/{lower}/{lower}-c0001-e000545-u.json']
-    else:
-        urls=[f'https://interessados.divulgacao.tse.jus.br/2018/divulgacao/oficial/296/dadosdivweb/{lower}/{lower}-c0001-e000296-w.js',
-              f'https://interessados2.divulgacao.tse.jus.br/2018/divulgacao/oficial/296/dadosdivweb/{lower}/{lower}-c0001-e000296-w.js']
-    errors=[]
-    for url in urls:
-        try:return extract(request(url),uf,year)
-        except Exception as e:errors.append(type(e).__name__+': '+str(e)[:90])
-    raise RuntimeError('; '.join(errors))
-
-def valid_file(p):
-    if not p.exists():return False
+def existing(year):
+    file = ROOT / 'data' / f'history_{year}.csv'
+    if not file.is_file():
+        return False
     try:
-        rows=list(csv.DictReader(p.open(encoding='utf-8-sig')))
-        return len(rows)==27 and set(x['uf'] for x in rows)==set(UFS) and all(int(x['total_valid'])>0 for x in rows)
-    except Exception:return False
+        with file.open(encoding='utf-8-sig', newline='') as f:
+            rows = list(csv.DictReader(f))
+        return {r['uf'] for r in rows} == UFS and len(rows) == 27 and all(int(r['total_valid']) > 0 for r in rows)
+    except (ValueError, KeyError, OSError):
+        return False
+
+def get_urls(year):
+    urls = [MIRRORS[year]]
+    try:
+        with open_url(API.format(year), timeout=15) as resp:
+            meta = json.load(resp)
+        resources = meta['result']['resources']
+        for resource in resources:
+            name = ' '.join(str(resource.get(k, '')) for k in ('name', 'description', 'url')).lower()
+            if 'votacao_candidato_munzona' in name or ('votação' in name and 'município' in name and 'zona' in name):
+                url = resource.get('url')
+                if url and url not in urls:
+                    urls.append(url)
+    except Exception as exc:
+        print(f'History {year}: aviso — metadados CKAN indisponíveis: {exc}')
+    return urls
+
+def download(url, dest):
+    with open_url(url) as resp, dest.open('wb') as out:
+        shutil.copyfileobj(resp, out, length=1024 * 1024)
+
+def parse_archive(path, year):
+    votes = defaultdict(lambda: defaultdict(int))
+    with zipfile.ZipFile(path) as archive:
+        members = [m for m in archive.namelist() if m.lower().endswith('_br.csv') and 'votacao_candidato_munzona' in m.lower()]
+        if not members:
+            raise ValueError('Arquivo de Presidente *_BR.csv não encontrado no ZIP do TSE')
+        for member in members:
+            with archive.open(member) as raw:
+                reader = csv.DictReader(io.TextIOWrapper(raw, encoding='latin-1', newline=''), delimiter=';')
+                fields = set(reader.fieldnames or [])
+                required = {'SG_UF', 'NR_TURNO', 'NR_CANDIDATO', 'QT_VOTOS_NOMINAIS'}
+                if not required.issubset(fields):
+                    raise ValueError(f'Campos ausentes em {member}: {required-fields}')
+                for row in reader:
+                    if row['NR_TURNO'].strip() != '2':
+                        continue
+                    uf = row['SG_UF'].strip().upper()
+                    number = row['NR_CANDIDATO'].strip()
+                    if uf not in UFS or number not in ('13', '17', '22'):
+                        continue
+                    if 'CD_CARGO' in fields and row['CD_CARGO'].strip() != '1':
+                        continue
+                    if 'DS_CARGO' in fields and 'PRESIDENTE' not in row['DS_CARGO'].upper():
+                        continue
+                    votes[uf][number] += int(row['QT_VOTOS_NOMINAIS'] or 0)
+    opponent = '17' if year == 2018 else '22'
+    rows = []
+    for uf in sorted(UFS):
+        lula_side = votes[uf]['13']  # Haddad (2018), Lula (2022)
+        bolsonaro_side = votes[uf][opponent]
+        total = lula_side + bolsonaro_side
+        if lula_side == 0 or bolsonaro_side == 0:
+            raise ValueError(f'{year}/{uf} contém votos insuficientes: 13={lula_side}, {opponent}={bolsonaro_side}')
+        rows.append({'uf': uf, 'bolsonaro_pct': f'{bolsonaro_side * 100 / total:.8f}', 'total_valid': total})
+    return rows
 
 def main():
     (ROOT/'data').mkdir(exist_ok=True)
-    for year in (2018,2022):
-        dest=ROOT/f'data/history_{year}.csv'
-        if valid_file(dest):print(f'History {year}: cached 27 UFs');continue
-        results=[];errors=[]
-        with ThreadPoolExecutor(max_workers=6) as pool:
-            futures={pool.submit(get_one,year,uf):uf for uf in UFS}
-            for f in as_completed(futures):
-                try:results.append(f.result())
-                except Exception as exc:errors.append(f'{futures[f]}: {exc}')
-        if len(results)!=27:
-            print(f'History {year}: {len(results)}/27 UFs; no incomplete CSV will be published.')
-            for error in errors[:5]:print('  ',error)
+    for year in (2018, 2022):
+        if existing(year):
+            print(f'History {year}: cache completo (27 UFs), download dispensado')
             continue
-        with dest.open('w',newline='',encoding='utf-8') as file:
-            writer=csv.DictWriter(file,fieldnames=['uf','bolsonaro_pct','total_valid']);writer.writeheader();writer.writerows(sorted(results,key=lambda r:r['uf']))
-        print(f'History {year}: downloaded 27 UFs')
-if __name__=='__main__':main()
+        errors = []
+        for url in get_urls(year):
+            with tempfile.TemporaryDirectory() as directory:
+                archive = Path(directory) / f'{year}.zip'
+                try:
+                    print(f'History {year}: baixando arquivo consolidado do TSE: {url}', flush=True)
+                    download(url, archive)
+                    rows = parse_archive(archive, year)
+                    target = ROOT/'data'/f'history_{year}.csv'
+                    tmp = target.with_suffix('.tmp')
+                    with tmp.open('w', newline='', encoding='utf-8') as out:
+                        writer = csv.DictWriter(out, fieldnames=['uf', 'bolsonaro_pct', 'total_valid'])
+                        writer.writeheader(); writer.writerows(rows)
+                    tmp.replace(target)
+                    print(f'History {year}: OK, 27 UFs, {sum(r["total_valid"] for r in rows):,} votos válidos')
+                    break
+                except Exception as exc:
+                    errors.append(f'{type(exc).__name__}: {exc}')
+        else:
+            print(f'History {year}: ERRO. Fontes tentadas: {len(errors)}; ' + ' | '.join(errors[:3]))
+            print('Dados históricos não foram fabricados; painel de projeção permanecerá indisponível.')
+
+if __name__ == '__main__':
+    main()
