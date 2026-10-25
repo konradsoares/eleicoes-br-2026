@@ -1,5 +1,19 @@
 {
-  "available": false,
-  "note": "Estimativa condicionada a dados estaduais; não é pesquisa eleitoral nem resultado oficial.",
-  "reason": "Dados ao vivo e CSVs históricos 2018/2022 necessários. Nenhuma probabilidade foi inventada."
+  "available": true,
+  "mode": "exploratory",
+  "note": "Cenários ilustrativos, NÃO probabilidade de vitória calibrada.",
+  "provisional": true,
+  "coverage_states": 5,
+  "baseline_states": 27,
+  "observed_votes": 42647,
+  "bolsonaro_projected_share": 0.48825,
+  "interval_90": [
+    0.29111,
+    0.68943
+  ],
+  "simulation_frequency_bolsonaro": 0.4527,
+  "simulation_frequency_lula": 0.5473,
+  "method": "4.000 cenários exploratórios com incerteza correlacionada e 27 UFs.",
+  "assumptions": "Usa votos 2026 observados, pesos de comparecimento de 2022, geografia 2018/2022 e forte incerteza. Não equipara Flávio 2026 a Jair 2022. Simulações não foram calibradas por backtesting.",
+  "warning": "APURAÇÃO INICIAL: resultados podem mudar muito. Frequência de cenário NÃO é chance de vitória calibrada."
 }
