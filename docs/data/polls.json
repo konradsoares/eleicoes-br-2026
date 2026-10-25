@@ -1,0 +1,68 @@
+{
+  "snapshot_date": "2026-10-24",
+  "generated_at": "2026-10-25T19:58:12.043750+00:00",
+  "collection_method": "snapshot verificado de publicações jornalísticas; não coleta ao vivo",
+  "disclaimer": "Registro no TSE não significa que os resultados numéricos estejam disponíveis no dataset público.",
+  "polls": [
+    {
+      "id": "atlasintel-bloomberg",
+      "institute": "AtlasIntel/Bloomberg",
+      "published_at": "2026-10-24",
+      "flavio_valid_pct": 50.8,
+      "lula_valid_pct": 49.2,
+      "basis": "validos",
+      "source_url": "https://noticias.uol.com.br/eleicoes/2026/10/24/atlasintel-presidencial-24-de-outubro.ghtm",
+      "source_date": "2026-10-24"
+    },
+    {
+      "id": "datafolha",
+      "institute": "Datafolha",
+      "published_at": "2026-10-24",
+      "flavio_valid_pct": 51.0,
+      "lula_valid_pct": 49.0,
+      "basis": "validos",
+      "source_url": "https://noticias.uol.com.br/eleicoes/2026/10/24/lula-x-flavio-nas-novas-pesquisas-de-segundo-turno-veja-numeros-atualizados.ghtm",
+      "source_date": "2026-10-24"
+    },
+    {
+      "id": "quaest",
+      "institute": "Quaest",
+      "published_at": "2026-10-24",
+      "flavio_valid_pct": 51.0,
+      "lula_valid_pct": 49.0,
+      "basis": "validos",
+      "source_url": "https://noticias.uol.com.br/eleicoes/2026/10/24/lula-x-flavio-nas-novas-pesquisas-de-segundo-turno-veja-numeros-atualizados.ghtm",
+      "source_date": "2026-10-24"
+    },
+    {
+      "id": "btg-nexus",
+      "institute": "BTG/Nexus",
+      "published_at": "2026-10-24",
+      "flavio_valid_pct": 50.5,
+      "lula_valid_pct": 49.5,
+      "basis": "validos",
+      "source_url": "https://noticias.uol.com.br/eleicoes/2026/10/24/lula-x-flavio-nas-novas-pesquisas-de-segundo-turno-veja-numeros-atualizados.ghtm",
+      "source_date": "2026-10-24"
+    },
+    {
+      "id": "cnt-mda",
+      "institute": "CNT/MDA",
+      "published_at": "2026-10-24",
+      "flavio_valid_pct": 50.7,
+      "lula_valid_pct": 49.3,
+      "basis": "validos",
+      "source_url": "https://noticias.uol.com.br/eleicoes/2026/10/24/cntmda-pesquisa-presidencial-24-de-outubro.ghtm",
+      "source_date": "2026-10-24"
+    },
+    {
+      "id": "palver",
+      "institute": "Palver",
+      "published_at": "2026-10-24",
+      "flavio_valid_pct": 50.505050505050505,
+      "lula_valid_pct": 49.494949494949495,
+      "basis": "estimativa_normalizada_de_votos_totais",
+      "source_url": "https://noticias.uol.com.br/eleicoes/2026/10/24/lula-x-flavio-nas-novas-pesquisas-de-segundo-turno-veja-numeros-atualizados.ghtm",
+      "source_date": "2026-10-24"
+    }
+  ]
+}
