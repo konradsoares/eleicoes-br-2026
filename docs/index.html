@@ -85,7 +85,7 @@ async function load(){const [d,p,c,polls]=await Promise.all([get('data/latest.js
  if(window.Chart){if(chart)chart.destroy();chart=new Chart($('chart'),{type:'bar',data:{labels,datasets:[{label:'Lula',data:lvalues,backgroundColor:'#4ba4fe'},{label:'Flávio',data:bvalues,backgroundColor:'#ff697e'}]},options:{responsive:true,plugins:{legend:{labels:{color:'#bbcadb'}}},scales:{x:{ticks:{color:'#a7b8ca'}},y:{max:100,ticks:{color:'#a7b8ca'}}}}})}
  $('l-prob').textContent=p?.available?pc(p.simulation_frequency_lula):'—';$('b-prob').textContent=p?.available?pc(p.simulation_frequency_bolsonaro):'—';
  $('projected').textContent=p?.available?pc(p.bolsonaro_projected_share):'—';$('projected-bar').style.width=p?.available?p.bolsonaro_projected_share*100+'%':'0%';$('interval').textContent=p?.available?'Faixa de 90% dos cenários: '+p.interval_90.map(pc).join(' – '):p?.reason||'Histórico e apuração estadual ainda insuficientes';
- $('commentary').textContent=c?.updated_at===d.updated_at?c.text:'Análise textual indisponível ou referente a um snapshot anterior.';
+ $('commentary').textContent=c?.updated_at===d.updated_at?c.text:'Análise OpenAI não gerada para esta coleta. Verifique se OPENAI_API_KEY está configurada nos Secrets do repositório e consulte o log de commentary.py.';
 }
 load();setInterval(load,60000);
 </script></body></html>

@@ -50,3 +50,10 @@ O parser usa a estrutura TSE `carper[].cand[]` de anos anteriores. A versão 202
 
 ## Pesquisas de 24/10 (automático)
 `python polls.py` gera `docs/data/polls.json` com seis pesquisas divulgadas em 24/10/2026, suas fontes e bases de cálculo, sem preenchimento de arquivos pelo usuário. O workflow executa o módulo automaticamente. O dashboard mostra o erro absoluto em pontos percentuais comparado aos votos válidos oficiais recebidos do TSE e, se disponível, à projeção. O ranking é **provisório** até 100% da apuração. Os números das pesquisas são um snapshot fixo de publicações de 24/10 (e não um feed de atualização ao vivo), justamente porque esta data está encerrada; coleta e atualização em tempo real são exclusivamente para o TSE. A Palver divulgou votos totais e a normalização é identificada. A base não garante cobertura exaustiva de todos os registros no TSE, porque registro da pesquisa não equivale a resultado publicado.
+
+
+### Histórico automático (v5)
+O workflow agora executa `python history.py` antes de `predict.py`. Consulta resultados públicos de 2018 e 2022 por UF, grava `data/history_2018.csv` e `data/history_2022.csv` somente quando obter as 27 UFs. Os formatos e a disponibilidade dos endpoints antigos precisam ser validados em GitHub Actions; falhas ficam no log e nenhuma projeção é fabricada. Os CSVs históricos completos são commitados no repositório; assim o bootstrap não precisa repetir os downloads.
+
+### OpenAI
+Em Settings > Secrets and variables > Actions adicione `OPENAI_API_KEY` como Repository secret. A assinatura ChatGPT Plus não fornece uma API key nem créditos de API. A análise da IA só aparece se o segredo estiver configurado e o serviço responder sem erro.

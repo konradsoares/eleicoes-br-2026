@@ -30,7 +30,7 @@ def main():
     national=data.get('national')
     h18=read_history(2018);h22=read_history(2022)
     if not national or not h18 or not h22:
-        out['reason']='Dados ao vivo e CSVs históricos 2018/2022 necessários. Nenhuma probabilidade foi inventada.'
+        out['reason']='Aguardando coleta ao vivo e download automático dos históricos oficiais completos. Consulte o log History no GitHub Actions.'
     else:
         states=[]
         for s in data.get('states',[]):
