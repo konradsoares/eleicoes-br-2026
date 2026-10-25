@@ -1,368 +1,368 @@
 {
-  "updated_at": "2026-10-25T22:52:57.112394+00:00",
+  "updated_at": "2026-10-25T22:54:38.415887+00:00",
   "source": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados",
   "election": "Presidente do Brasil — 2º turno 2026",
   "national": {
     "uf": "BR",
-    "progress": 0.1665945582155562,
+    "progress": 0.17490706021856872,
     "candidates": [
       {
         "name": "FLAVIO BOLSONARO",
         "number": "22",
-        "votes": 10421909,
-        "percent_reported": 0.5023
+        "votes": 10941854,
+        "percent_reported": 0.5027
       },
       {
         "name": "LULA",
         "number": "13",
-        "votes": 10326785,
-        "percent_reported": 0.49770000000000003
+        "votes": 10822271,
+        "percent_reported": 0.49729999999999996
       }
     ],
-    "source_timestamp": "25/10/2026 19:52:27"
+    "source_timestamp": "25/10/2026 19:53:48"
   },
   "states": [
     {
       "uf": "AC",
-      "progress": 0.4431718061674009,
+      "progress": 0.45859030837004405,
       "candidates": [
         {
           "name": "FLAVIO BOLSONARO",
           "number": "22",
-          "votes": 125779,
-          "percent_reported": 0.6531
+          "votes": 130127,
+          "percent_reported": 0.6520999999999999
         },
         {
           "name": "LULA",
           "number": "13",
-          "votes": 66811,
-          "percent_reported": 0.3469
+          "votes": 69422,
+          "percent_reported": 0.3479
         }
       ],
-      "source_timestamp": "25/10/2026 19:52:25"
+      "source_timestamp": "25/10/2026 19:53:45"
     },
     {
       "uf": "AL",
-      "progress": 0.23053091113927615,
+      "progress": 0.2786931418110125,
       "candidates": [
         {
           "name": "LULA",
           "number": "13",
-          "votes": 271045,
-          "percent_reported": 0.6338
+          "votes": 328551,
+          "percent_reported": 0.6358
         },
         {
           "name": "FLAVIO BOLSONARO",
           "number": "22",
-          "votes": 156602,
-          "percent_reported": 0.36619999999999997
+          "votes": 188179,
+          "percent_reported": 0.3642
         }
       ],
-      "source_timestamp": "25/10/2026 19:51:16"
+      "source_timestamp": "25/10/2026 19:53:45"
     },
     {
       "uf": "AM",
-      "progress": 0.5562093907073679,
+      "progress": 0.5737403457153365,
       "candidates": [
         {
           "name": "FLAVIO BOLSONARO",
           "number": "22",
-          "votes": 627355,
-          "percent_reported": 0.5047
+          "votes": 645429,
+          "percent_reported": 0.5032
         },
         {
           "name": "LULA",
           "number": "13",
-          "votes": 615743,
-          "percent_reported": 0.4953
+          "votes": 637183,
+          "percent_reported": 0.4968
         }
       ],
-      "source_timestamp": "25/10/2026 19:52:25"
+      "source_timestamp": "25/10/2026 19:53:45"
     },
     {
       "uf": "AP",
-      "progress": 0.2110762800417973,
+      "progress": 0.22413793103448276,
       "candidates": [
         {
           "name": "LULA",
           "number": "13",
-          "votes": 44585,
-          "percent_reported": 0.595
+          "votes": 46966,
+          "percent_reported": 0.5898
         },
         {
           "name": "FLAVIO BOLSONARO",
           "number": "22",
-          "votes": 30345,
-          "percent_reported": 0.405
+          "votes": 32671,
+          "percent_reported": 0.4102
         }
       ],
-      "source_timestamp": "25/10/2026 19:52:25"
+      "source_timestamp": "25/10/2026 19:53:45"
     },
     {
       "uf": "BA",
-      "progress": 0.04870898635697373,
+      "progress": 0.05127410080054121,
       "candidates": [
         {
           "name": "LULA",
           "number": "13",
-          "votes": 312532,
-          "percent_reported": 0.7048000000000001
+          "votes": 330047,
+          "percent_reported": 0.7056999999999999
         },
         {
           "name": "FLAVIO BOLSONARO",
           "number": "22",
-          "votes": 130932,
-          "percent_reported": 0.2952
+          "votes": 137668,
+          "percent_reported": 0.2943
         }
       ],
-      "source_timestamp": "25/10/2026 19:51:56"
+      "source_timestamp": "25/10/2026 19:53:46"
     },
     {
       "uf": "CE",
-      "progress": 0.047001893540921526,
+      "progress": 0.05436566379128971,
       "candidates": [
         {
           "name": "LULA",
           "number": "13",
-          "votes": 185610,
-          "percent_reported": 0.6448999999999999
+          "votes": 214619,
+          "percent_reported": 0.6439
         },
         {
           "name": "FLAVIO BOLSONARO",
           "number": "22",
-          "votes": 102219,
-          "percent_reported": 0.35509999999999997
+          "votes": 118715,
+          "percent_reported": 0.35609999999999997
         }
       ],
-      "source_timestamp": "25/10/2026 19:51:55"
+      "source_timestamp": "25/10/2026 19:53:45"
     },
     {
       "uf": "DF",
-      "progress": 0.8075764098148945,
+      "progress": 0.8334050796383986,
       "candidates": [
         {
           "name": "FLAVIO BOLSONARO",
           "number": "22",
-          "votes": 794588,
-          "percent_reported": 0.5447
+          "votes": 820151,
+          "percent_reported": 0.5444
         },
         {
           "name": "LULA",
           "number": "13",
-          "votes": 664289,
-          "percent_reported": 0.45530000000000004
+          "votes": 686245,
+          "percent_reported": 0.4556
         }
       ],
-      "source_timestamp": "25/10/2026 19:52:25"
+      "source_timestamp": "25/10/2026 19:53:45"
     },
     {
       "uf": "ES",
-      "progress": 0.24339699309223892,
+      "progress": 0.2717391304347826,
       "candidates": [
         {
           "name": "FLAVIO BOLSONARO",
           "number": "22",
-          "votes": 311452,
-          "percent_reported": 0.5731
+          "votes": 347612,
+          "percent_reported": 0.5704
         },
         {
           "name": "LULA",
           "number": "13",
-          "votes": 232001,
-          "percent_reported": 0.4269
+          "votes": 261805,
+          "percent_reported": 0.4296
         }
       ],
-      "source_timestamp": "25/10/2026 19:51:55"
+      "source_timestamp": "25/10/2026 19:53:45"
     },
     {
       "uf": "GO",
-      "progress": 0.06489863572612521,
+      "progress": 0.07178375621573378,
       "candidates": [
         {
           "name": "FLAVIO BOLSONARO",
           "number": "22",
-          "votes": 164090,
-          "percent_reported": 0.6272
+          "votes": 180229,
+          "percent_reported": 0.626
         },
         {
           "name": "LULA",
           "number": "13",
-          "votes": 97532,
-          "percent_reported": 0.3728
+          "votes": 107655,
+          "percent_reported": 0.374
         }
       ],
-      "source_timestamp": "25/10/2026 19:51:56"
+      "source_timestamp": "25/10/2026 19:53:45"
     },
     {
       "uf": "MA",
-      "progress": 0.2488255126291936,
+      "progress": 0.2652407008235229,
       "candidates": [
         {
           "name": "LULA",
           "number": "13",
-          "votes": 693075,
-          "percent_reported": 0.6605
+          "votes": 736676,
+          "percent_reported": 0.6606000000000001
         },
         {
           "name": "FLAVIO BOLSONARO",
           "number": "22",
-          "votes": 356299,
-          "percent_reported": 0.3395
+          "votes": 378512,
+          "percent_reported": 0.3394
         }
       ],
-      "source_timestamp": "25/10/2026 19:52:27"
+      "source_timestamp": "25/10/2026 19:53:47"
     },
     {
       "uf": "MG",
-      "progress": 0.12615727401943835,
+      "progress": 0.12990280819023473,
       "candidates": [
         {
           "name": "FLAVIO BOLSONARO",
           "number": "22",
-          "votes": 900449,
-          "percent_reported": 0.5007
+          "votes": 925064,
+          "percent_reported": 0.5012
         },
         {
           "name": "LULA",
           "number": "13",
-          "votes": 897781,
-          "percent_reported": 0.4993
+          "votes": 920803,
+          "percent_reported": 0.4988
         }
       ],
-      "source_timestamp": "25/10/2026 19:52:26"
+      "source_timestamp": "25/10/2026 19:53:27"
     },
     {
       "uf": "MS",
-      "progress": 0.4199268224036026,
+      "progress": 0.46974387841260906,
       "candidates": [
         {
           "name": "FLAVIO BOLSONARO",
           "number": "22",
-          "votes": 398931,
-          "percent_reported": 0.6058
+          "votes": 448522,
+          "percent_reported": 0.6085
         },
         {
           "name": "LULA",
           "number": "13",
-          "votes": 259589,
-          "percent_reported": 0.3942
+          "votes": 288608,
+          "percent_reported": 0.39149999999999996
         }
       ],
-      "source_timestamp": "25/10/2026 19:51:56"
+      "source_timestamp": "25/10/2026 19:53:45"
     },
     {
       "uf": "MT",
-      "progress": 0.3620127911186195,
+      "progress": 0.372028478339568,
       "candidates": [
         {
           "name": "FLAVIO BOLSONARO",
           "number": "22",
-          "votes": 480733,
-          "percent_reported": 0.6342
+          "votes": 496299,
+          "percent_reported": 0.6369
         },
         {
           "name": "LULA",
           "number": "13",
-          "votes": 277317,
-          "percent_reported": 0.36579999999999996
+          "votes": 282984,
+          "percent_reported": 0.36310000000000003
         }
       ],
-      "source_timestamp": "25/10/2026 19:52:25"
+      "source_timestamp": "25/10/2026 19:53:46"
     },
     {
       "uf": "PA",
-      "progress": 0.37984347241561434,
+      "progress": 0.39909732558697847,
       "candidates": [
         {
           "name": "LULA",
           "number": "13",
-          "votes": 1083551,
-          "percent_reported": 0.5481
+          "votes": 1132222,
+          "percent_reported": 0.5473
         },
         {
           "name": "FLAVIO BOLSONARO",
           "number": "22",
-          "votes": 893540,
-          "percent_reported": 0.45189999999999997
+          "votes": 936511,
+          "percent_reported": 0.45270000000000005
         }
       ],
-      "source_timestamp": "25/10/2026 19:51:56"
+      "source_timestamp": "25/10/2026 19:53:46"
     },
     {
       "uf": "PB",
-      "progress": 0.6561799850634802,
+      "progress": 0.6804518297236744,
       "candidates": [
         {
           "name": "LULA",
           "number": "13",
-          "votes": 1180009,
-          "percent_reported": 0.6816
+          "votes": 1223910,
+          "percent_reported": 0.6811
         },
         {
           "name": "FLAVIO BOLSONARO",
           "number": "22",
-          "votes": 551167,
-          "percent_reported": 0.3184
+          "votes": 572943,
+          "percent_reported": 0.3189
         }
       ],
-      "source_timestamp": "25/10/2026 19:51:57"
+      "source_timestamp": "25/10/2026 19:53:46"
     },
     {
       "uf": "PE",
-      "progress": 0.07050144738070782,
+      "progress": 0.07577738350919787,
       "candidates": [
         {
           "name": "LULA",
           "number": "13",
-          "votes": 294367,
-          "percent_reported": 0.7379000000000001
+          "votes": 316759,
+          "percent_reported": 0.7384999999999999
         },
         {
           "name": "FLAVIO BOLSONARO",
           "number": "22",
-          "votes": 104562,
-          "percent_reported": 0.2621
+          "votes": 112148,
+          "percent_reported": 0.2615
         }
       ],
-      "source_timestamp": "25/10/2026 19:51:56"
+      "source_timestamp": "25/10/2026 19:53:46"
     },
     {
       "uf": "PI",
-      "progress": 0.0517359413202934,
+      "progress": 0.05271393643031785,
       "candidates": [
         {
           "name": "LULA",
           "number": "13",
-          "votes": 84251,
-          "percent_reported": 0.7754000000000001
+          "votes": 85913,
+          "percent_reported": 0.7763
         },
         {
           "name": "FLAVIO BOLSONARO",
           "number": "22",
-          "votes": 24408,
-          "percent_reported": 0.22460000000000002
+          "votes": 24758,
+          "percent_reported": 0.2237
         }
       ],
-      "source_timestamp": "25/10/2026 19:51:56"
+      "source_timestamp": "25/10/2026 19:53:46"
     },
     {
       "uf": "PR",
-      "progress": 0.42852405865448384,
+      "progress": 0.47995726180826764,
       "candidates": [
         {
           "name": "FLAVIO BOLSONARO",
           "number": "22",
-          "votes": 1839387,
-          "percent_reported": 0.6232
+          "votes": 2060469,
+          "percent_reported": 0.6242
         },
         {
           "name": "LULA",
           "number": "13",
-          "votes": 1111900,
-          "percent_reported": 0.3768
+          "votes": 1240724,
+          "percent_reported": 0.37579999999999997
         }
       ],
-      "source_timestamp": "25/10/2026 19:47:59"
+      "source_timestamp": "25/10/2026 19:53:48"
     },
     {
       "uf": "RJ",
@@ -381,45 +381,45 @@
           "percent_reported": 0.4103
         }
       ],
-      "source_timestamp": "25/10/2026 19:52:25"
+      "source_timestamp": "25/10/2026 19:53:45"
     },
     {
       "uf": "RN",
-      "progress": 0.21873074553296365,
+      "progress": 0.23672211953173136,
       "candidates": [
         {
           "name": "LULA",
           "number": "13",
-          "votes": 320101,
-          "percent_reported": 0.6853
+          "votes": 346189,
+          "percent_reported": 0.6828
         },
         {
           "name": "FLAVIO BOLSONARO",
           "number": "22",
-          "votes": 147002,
-          "percent_reported": 0.3147
+          "votes": 160808,
+          "percent_reported": 0.3172
         }
       ],
-      "source_timestamp": "25/10/2026 19:51:55"
+      "source_timestamp": "25/10/2026 19:53:46"
     },
     {
       "uf": "RO",
-      "progress": 0.35461898680289483,
+      "progress": 0.36015325670498083,
       "candidates": [
         {
           "name": "FLAVIO BOLSONARO",
           "number": "22",
-          "votes": 229914,
-          "percent_reported": 0.6463
+          "votes": 233538,
+          "percent_reported": 0.6459999999999999
         },
         {
           "name": "LULA",
           "number": "13",
-          "votes": 125832,
-          "percent_reported": 0.35369999999999996
+          "votes": 127949,
+          "percent_reported": 0.354
         }
       ],
-      "source_timestamp": "25/10/2026 19:52:25"
+      "source_timestamp": "25/10/2026 19:53:45"
     },
     {
       "uf": "RR",
@@ -442,98 +442,98 @@
     },
     {
       "uf": "RS",
-      "progress": 0.1650996478745417,
+      "progress": 0.18248811122808292,
       "candidates": [
         {
           "name": "FLAVIO BOLSONARO",
           "number": "22",
-          "votes": 703399,
-          "percent_reported": 0.6223
+          "votes": 774037,
+          "percent_reported": 0.62
         },
         {
           "name": "LULA",
           "number": "13",
-          "votes": 426948,
-          "percent_reported": 0.37770000000000004
+          "votes": 474341,
+          "percent_reported": 0.38
         }
       ],
-      "source_timestamp": "25/10/2026 19:51:57"
+      "source_timestamp": "25/10/2026 19:53:47"
     },
     {
       "uf": "SC",
-      "progress": 0.13465312247489322,
+      "progress": 0.14544615029435531,
       "candidates": [
         {
           "name": "FLAVIO BOLSONARO",
           "number": "22",
-          "votes": 390587,
-          "percent_reported": 0.6146
+          "votes": 426044,
+          "percent_reported": 0.6204999999999999
         },
         {
           "name": "LULA",
           "number": "13",
-          "votes": 244956,
-          "percent_reported": 0.38539999999999996
+          "votes": 260603,
+          "percent_reported": 0.3795
         }
       ],
-      "source_timestamp": "25/10/2026 19:51:56"
+      "source_timestamp": "25/10/2026 19:53:47"
     },
     {
       "uf": "SE",
-      "progress": 0.012662502110417018,
+      "progress": 0.013844335640722606,
       "candidates": [
         {
           "name": "LULA",
           "number": "13",
-          "votes": 12285,
-          "percent_reported": 0.6659
+          "votes": 13668,
+          "percent_reported": 0.6709999999999999
         },
         {
           "name": "FLAVIO BOLSONARO",
           "number": "22",
-          "votes": 6165,
-          "percent_reported": 0.33409999999999995
+          "votes": 6701,
+          "percent_reported": 0.32899999999999996
         }
       ],
-      "source_timestamp": "25/10/2026 19:52:25"
+      "source_timestamp": "25/10/2026 19:53:46"
     },
     {
       "uf": "SP",
-      "progress": 0.01410434514162229,
+      "progress": 0.018841166936790926,
       "candidates": [
         {
           "name": "FLAVIO BOLSONARO",
           "number": "22",
-          "votes": 217381,
-          "percent_reported": 0.6265
+          "votes": 287161,
+          "percent_reported": 0.6195
         },
         {
           "name": "LULA",
           "number": "13",
-          "votes": 129601,
-          "percent_reported": 0.3735
+          "votes": 176395,
+          "percent_reported": 0.38049999999999995
         }
       ],
-      "source_timestamp": "25/10/2026 19:51:16"
+      "source_timestamp": "25/10/2026 19:53:48"
     },
     {
       "uf": "TO",
-      "progress": 0.7098540145985401,
+      "progress": 0.7276459854014599,
       "candidates": [
         {
           "name": "FLAVIO BOLSONARO",
           "number": "22",
-          "votes": 328151,
-          "percent_reported": 0.507
+          "votes": 338108,
+          "percent_reported": 0.5086999999999999
         },
         {
           "name": "LULA",
           "number": "13",
-          "votes": 319146,
-          "percent_reported": 0.493
+          "votes": 326532,
+          "percent_reported": 0.4913
         }
       ],
-      "source_timestamp": "25/10/2026 19:52:26"
+      "source_timestamp": "25/10/2026 19:53:47"
     }
   ],
   "errors": []
