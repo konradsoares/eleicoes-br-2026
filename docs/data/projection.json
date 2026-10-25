@@ -5,11 +5,11 @@
   "provisional": true,
   "coverage_states": 26,
   "baseline_states": 27,
-  "observed_votes": 1660705,
-  "bolsonaro_projected_share": 0.48615,
+  "observed_votes": 1694360,
+  "bolsonaro_projected_share": 0.48611,
   "interval_90": [
-    0.29781,
-    0.67715
+    0.29793,
+    0.67688
   ],
   "simulation_frequency_bolsonaro": 0.4435,
   "simulation_frequency_lula": 0.5565,
