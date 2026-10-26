@@ -5,14 +5,14 @@
   "provisional": true,
   "coverage_states": 27,
   "baseline_states": 27,
-  "observed_votes": 111708208,
-  "bolsonaro_projected_share": 0.48712,
+  "observed_votes": 117405638,
+  "bolsonaro_projected_share": 0.48616,
   "interval_90": [
-    0.46614,
-    0.50812
+    0.46848,
+    0.50405
   ],
-  "simulation_frequency_bolsonaro": 0.152,
-  "simulation_frequency_lula": 0.848,
+  "simulation_frequency_bolsonaro": 0.1008,
+  "simulation_frequency_lula": 0.8992,
   "method": "4.000 cenários exploratórios com incerteza correlacionada e 27 UFs.",
   "assumptions": "Usa votos 2026 observados, pesos de comparecimento de 2022, geografia 2018/2022 e forte incerteza. Não equipara Flávio 2026 a Jair 2022. Simulações não foram calibradas por backtesting.",
   "warning": "APURAÇÃO INICIAL: resultados podem mudar muito. Frequência de cenário NÃO é chance de vitória calibrada."
