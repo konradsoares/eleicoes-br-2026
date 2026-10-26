@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T02:24:05.222097+00:00",
+  "updated_at": "2026-10-26T05:20:51.881846+00:00",
   "source": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados",
   "election": "Presidente do Brasil — 2º turno 2026",
   "national": {
@@ -19,7 +19,7 @@
         "percent_reported": 0.48210000000000003
       }
     ],
-    "source_timestamp": "25/10/2026 23:22:22"
+    "source_timestamp": "25/10/2026 23:27:02"
   },
   "states": [
     {
@@ -39,7 +39,7 @@
           "percent_reported": 0.3343
         }
       ],
-      "source_timestamp": "25/10/2026 23:22:16"
+      "source_timestamp": "25/10/2026 23:26:56"
     },
     {
       "uf": "AL",
@@ -58,7 +58,7 @@
           "percent_reported": 0.3923
         }
       ],
-      "source_timestamp": "25/10/2026 23:22:17"
+      "source_timestamp": "25/10/2026 23:26:57"
     },
     {
       "uf": "AM",
@@ -77,7 +77,7 @@
           "percent_reported": 0.4598
         }
       ],
-      "source_timestamp": "25/10/2026 23:22:17"
+      "source_timestamp": "25/10/2026 23:26:57"
     },
     {
       "uf": "AP",
@@ -96,7 +96,7 @@
           "percent_reported": 0.47119999999999995
         }
       ],
-      "source_timestamp": "25/10/2026 23:22:16"
+      "source_timestamp": "25/10/2026 23:26:56"
     },
     {
       "uf": "BA",
@@ -115,7 +115,7 @@
           "percent_reported": 0.2869
         }
       ],
-      "source_timestamp": "25/10/2026 23:22:24"
+      "source_timestamp": "25/10/2026 23:27:06"
     },
     {
       "uf": "CE",
@@ -134,7 +134,7 @@
           "percent_reported": 0.3107
         }
       ],
-      "source_timestamp": "25/10/2026 23:22:19"
+      "source_timestamp": "25/10/2026 23:26:58"
     },
     {
       "uf": "DF",
@@ -153,7 +153,7 @@
           "percent_reported": 0.4572
         }
       ],
-      "source_timestamp": "25/10/2026 23:22:17"
+      "source_timestamp": "25/10/2026 23:26:57"
     },
     {
       "uf": "ES",
@@ -172,7 +172,7 @@
           "percent_reported": 0.4363
         }
       ],
-      "source_timestamp": "25/10/2026 23:22:17"
+      "source_timestamp": "25/10/2026 23:26:57"
     },
     {
       "uf": "GO",
@@ -191,7 +191,7 @@
           "percent_reported": 0.40340000000000004
         }
       ],
-      "source_timestamp": "25/10/2026 23:22:19"
+      "source_timestamp": "25/10/2026 23:26:59"
     },
     {
       "uf": "MA",
@@ -210,7 +210,7 @@
           "percent_reported": 0.3046
         }
       ],
-      "source_timestamp": "25/10/2026 23:22:19"
+      "source_timestamp": "25/10/2026 23:27:00"
     },
     {
       "uf": "MG",
@@ -229,7 +229,7 @@
           "percent_reported": 0.49570000000000003
         }
       ],
-      "source_timestamp": "25/10/2026 23:09:26"
+      "source_timestamp": "25/10/2026 23:27:09"
     },
     {
       "uf": "MS",
@@ -248,7 +248,7 @@
           "percent_reported": 0.40399999999999997
         }
       ],
-      "source_timestamp": "25/10/2026 23:22:18"
+      "source_timestamp": "25/10/2026 23:26:57"
     },
     {
       "uf": "MT",
@@ -267,7 +267,7 @@
           "percent_reported": 0.3394
         }
       ],
-      "source_timestamp": "25/10/2026 23:22:18"
+      "source_timestamp": "25/10/2026 23:26:58"
     },
     {
       "uf": "PA",
@@ -286,7 +286,7 @@
           "percent_reported": 0.4498
         }
       ],
-      "source_timestamp": "25/10/2026 23:22:19"
+      "source_timestamp": "25/10/2026 23:26:59"
     },
     {
       "uf": "PB",
@@ -305,7 +305,7 @@
           "percent_reported": 0.32539999999999997
         }
       ],
-      "source_timestamp": "25/10/2026 23:22:19"
+      "source_timestamp": "25/10/2026 23:26:59"
     },
     {
       "uf": "PE",
@@ -324,7 +324,7 @@
           "percent_reported": 0.308
         }
       ],
-      "source_timestamp": "25/10/2026 23:22:19"
+      "source_timestamp": "25/10/2026 23:26:59"
     },
     {
       "uf": "PI",
@@ -343,7 +343,7 @@
           "percent_reported": 0.2412
         }
       ],
-      "source_timestamp": "25/10/2026 23:22:19"
+      "source_timestamp": "25/10/2026 23:26:59"
     },
     {
       "uf": "PR",
@@ -362,7 +362,7 @@
           "percent_reported": 0.37420000000000003
         }
       ],
-      "source_timestamp": "25/10/2026 23:22:23"
+      "source_timestamp": "25/10/2026 23:27:02"
     },
     {
       "uf": "RJ",
@@ -381,7 +381,7 @@
           "percent_reported": 0.469
         }
       ],
-      "source_timestamp": "25/10/2026 23:22:19"
+      "source_timestamp": "25/10/2026 23:26:58"
     },
     {
       "uf": "RN",
@@ -400,7 +400,7 @@
           "percent_reported": 0.3428
         }
       ],
-      "source_timestamp": "25/10/2026 23:09:18"
+      "source_timestamp": "25/10/2026 23:26:58"
     },
     {
       "uf": "RO",
@@ -419,7 +419,7 @@
           "percent_reported": 0.3039
         }
       ],
-      "source_timestamp": "25/10/2026 23:22:17"
+      "source_timestamp": "25/10/2026 23:26:57"
     },
     {
       "uf": "RR",
@@ -457,7 +457,7 @@
           "percent_reported": 0.4216
         }
       ],
-      "source_timestamp": "25/10/2026 23:22:25"
+      "source_timestamp": "25/10/2026 23:27:07"
     },
     {
       "uf": "SC",
@@ -476,7 +476,7 @@
           "percent_reported": 0.30579999999999996
         }
       ],
-      "source_timestamp": "25/10/2026 23:22:22"
+      "source_timestamp": "25/10/2026 23:27:01"
     },
     {
       "uf": "SE",
@@ -495,7 +495,7 @@
           "percent_reported": 0.30469999999999997
         }
       ],
-      "source_timestamp": "25/10/2026 23:22:17"
+      "source_timestamp": "25/10/2026 23:26:57"
     },
     {
       "uf": "SP",
@@ -514,7 +514,7 @@
           "percent_reported": 0.46149999999999997
         }
       ],
-      "source_timestamp": "25/10/2026 23:22:27"
+      "source_timestamp": "25/10/2026 23:27:11"
     },
     {
       "uf": "TO",
@@ -533,7 +533,7 @@
           "percent_reported": 0.4863
         }
       ],
-      "source_timestamp": "25/10/2026 23:22:17"
+      "source_timestamp": "25/10/2026 23:26:58"
     }
   ],
   "errors": []
