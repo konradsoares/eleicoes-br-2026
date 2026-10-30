@@ -25,9 +25,12 @@
 .state-compare .flavio-bar{background:var(--flavio)}
 .state-votes{font-size:11px;color:var(--muted)}
 @media(max-width:650px){.state-list{grid-template-columns:1fr}}
-</style></head><body><main><header><div><div class="eyebrow">OBSERVATÓRIO ELEITORAL · BRASIL 2026</div><h1>Apuração presidencial — 2º turno</h1><div class="sub">Resultados TSE · projeções condicionais · análise quantitativa</div></div><div><span class="pill" id="status">● Aguardando dados</span> <button onclick="load()">Atualizar</button></div></header>
+
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 20px}.tab{background:#14233b;border:1px solid var(--border);padding:11px 18px}.tab.active{border-color:#4bd7aa;color:#fff;background:#1c3852}#sections-page[hidden],#overview-page[hidden]{display:none!important}.section-controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:15px 0}.section-controls label{display:flex;flex-direction:column;gap:6px;color:var(--muted);font-size:12px}.section-controls input,.section-controls select{width:100%;min-width:0;padding:10px;background:#0b1627;color:#fff;border:1px solid var(--border);border-radius:8px}.section-table{width:100%;border-collapse:collapse;font-size:13px}.section-table th,.section-table td{padding:10px;border-bottom:1px solid var(--border);text-align:right}.section-table th:first-child,.section-table td:first-child,.section-table th:nth-child(2),.section-table td:nth-child(2){text-align:left}.section-table th{color:#b4c8e0;position:sticky;top:0;background:#142239}.section-table-wrap{overflow:auto;max-height:520px}.zero{font-weight:800;color:#ffcb6b}.sec-count{font-size:13px;color:var(--muted)}@media(max-width:770px){.section-controls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style></head><body><main><header><div><div class="eyebrow">OBSERVATÓRIO ELEITORAL · BRASIL 2026</div><h1>Apuração presidencial — 2º turno</h1><div class="sub">Resultados TSE · projeções condicionais · análise quantitativa</div></div><div><span class="pill" id="status">● Aguardando dados</span></div></header>
 <div id="warning" class="warn">Nenhum resultado ao vivo foi carregado. O painel não exibirá números fictícios.</div>
-<section class="grid"><article class="card wide"><div class="lbl">Lula · votos oficiais</div><div class="candidate"><strong id="l-share">—</strong><div id="l-votes" class="sub">— votos</div></div><div class="track"><div class="fill" id="l-bar"></div></div><div class="lbl">Percentual dos votos válidos já totalizados</div></article><article class="card wide"><div class="lbl">Flávio Bolsonaro · votos oficiais</div><div class="candidate"><strong id="b-share">—</strong><div id="b-votes" class="sub">— votos</div></div><div class="track"><div class="fill red" id="b-bar"></div></div><div class="lbl">Percentual dos votos válidos já totalizados</div></article>
+<nav class="tabs"><button id="tab-overview" class="tab active" type="button">Apuração e projeções</button><button id="tab-sections" class="tab" type="button">Seções eleitorais</button></nav>
+<div id="overview-page"><section class="grid"><article class="card wide"><div class="lbl">Lula · votos oficiais</div><div class="candidate"><strong id="l-share">—</strong><div id="l-votes" class="sub">— votos</div></div><div class="track"><div class="fill" id="l-bar"></div></div><div class="lbl">Percentual dos votos válidos já totalizados</div></article><article class="card wide"><div class="lbl">Flávio Bolsonaro · votos oficiais</div><div class="candidate"><strong id="b-share">—</strong><div id="b-votes" class="sub">— votos</div></div><div class="track"><div class="fill red" id="b-bar"></div></div><div class="lbl">Percentual dos votos válidos já totalizados</div></article>
 <article class="card"><div class="lbl">Apuração nacional</div><div class="gauge"><div id="progress-gauge" class="ring" style="--amount:0%"><span id="progress">—</span></div></div><small>Urnas ou seções processadas (TSE)</small></article>
 <article class="card"><div class="lbl">Votos válidos apurados</div><div id="total" class="big">—</div><small>Somente votos observados</small></article>
 <article class="card"><div class="lbl">Simulações favoráveis a Lula</div><div id="l-prob" class="big">—</div><small>Cenários exploratórios, não chance real de vitória</small></article>
@@ -37,7 +40,17 @@
 <article class="card full"><div class="candidate"><strong style="font-size:18px">Pesquisas de 24/10 × TSE</strong><small id="poll-status">Dados publicados em 24/10/2026</small></div><p class="sub">Comparação por votos válidos. Antes de 100% da apuração, os erros são provisórios e podem refletir a ordem regional da totalização. Palver usa conversão aproximada dos votos totais.</p><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;text-align:left" id="poll-table"><thead><tr><th>Instituto</th><th>Flávio</th><th>Lula</th><th>Erro vs TSE</th><th>Erro vs projeção</th></tr></thead><tbody><tr><td colspan="5">Carregando pesquisas...</td></tr></tbody></table></div><small id="poll-explanation"></small></article>
 <article class="card full"><div class="lbl">Análise interpretativa OpenAI</div><p id="commentary" style="line-height:1.7">Não disponível. A IA não determina as chances de vitória nem substitui o modelo estatístico.</p></article>
 <article class="card full"><div class="candidate"><strong style="font-size:18px">Apuração por estado</strong><small id="updates">—</small></div><div class="state-list" id="states" style="margin-top:15px"><div class="sub">Aguardando resultados estaduais.</div></div></article>
-<article class="card full"><small><b>Transparência:</b> resultados observados são exclusivamente os números obtidos do TSE; projeções são cenários condicionados a hipóteses e podem estar incorretas. A ordem de totalização não forma amostra aleatória. Atualizações automáticas no navegador a cada 60 segundos, dependendo da coleta e publicação. Fonte: <a style="color:#91baff" href="https://resultados.tse.jus.br/" target="_blank" rel="noopener">TSE</a>.</small></article></section></main>
+<article class="card full"><small><b>Transparência:</b> resultados observados são exclusivamente os números obtidos do TSE; projeções são cenários condicionados a hipóteses e podem estar incorretas. A ordem de totalização não forma amostra aleatória. Atualizações automáticas no navegador a cada 60 segundos, dependendo da coleta e publicação. Fonte: <a style="color:#91baff" href="https://resultados.tse.jus.br/" target="_blank" rel="noopener">TSE</a>.</small></article></section></div><div id="sections-page" hidden>
+<article class="card"><h2>Seções eleitorais — 2º turno de 2026</h2><p class="sub">Votação nominal oficial por seção. Os dados detalhados do portal de Dados Abertos do TSE são publicados ao final do turno, não em tempo real. Seção sem registro não é seção com zero votos.</p><div id="section-message" class="sub">Verificando publicação dos dados oficiais de seções...</div>
+<h3>Resumo por estado</h3><div class="section-table-wrap"><table class="section-table"><thead><tr><th>UF</th><th>Seções com registros</th><th>Lula (votos)</th><th>Flávio (votos)</th><th>Lula = 0</th><th>Flávio = 0</th></tr></thead><tbody id="sections-summary"><tr><td colspan="6">Aguardando arquivo oficial</td></tr></tbody></table></div></article>
+<article class="card" style="margin-top:16px"><h3>Pesquisar município, zona e seção</h3><div class="section-controls">
+<label>UF<select id="section-uf"><option value="">Selecione UF</option></select></label>
+<label>Município<select id="section-city"><option value="">Todos</option></select></label>
+<label>Zona <input id="section-zone" type="text" inputmode="numeric" placeholder="Ex.: 12"></label>
+<label>Seção <input id="section-number" type="text" inputmode="numeric" placeholder="Ex.: 125"></label>
+<label>Filtro de votos<select id="section-zero"><option value="all">Todas as seções com registro</option><option value="l0">Lula = 0; Flávio > 0</option><option value="f0">Flávio = 0; Lula > 0</option><option value="both">Ambos com votos</option></select></label>
+</div><p id="section-counter" class="sec-count"></p><div class="section-table-wrap"><table class="section-table"><thead><tr><th>Município</th><th>Zona / seção</th><th style="color:var(--lula)">Lula</th><th style="color:var(--flavio)">Flávio</th><th>Votos válidos</th></tr></thead><tbody id="sections-rows"><tr><td colspan="5">Selecione uma UF.</td></tr></tbody></table></div><div style="display:flex;align-items:center;gap:12px;margin-top:13px"><button id="section-more" type="button" hidden>Mostrar mais 100</button><span class="sec-count" id="section-visible"></span></div></article>
+</div></main>
 <script>
 const nf=new Intl.NumberFormat('pt-BR');const pc=n=>Number.isFinite(n)?(n*100).toFixed(2).replace('.',',')+'%':'—';const $=id=>document.getElementById(id);let chart;
 function renderPolls(polls,d,p){
@@ -100,4 +113,79 @@ async function load(){const [d,p,c,polls]=await Promise.all([get('data/latest.js
  $('commentary').textContent=c?.updated_at===d.updated_at?c.text:'Análise OpenAI não gerada para esta coleta. Verifique se OPENAI_API_KEY está configurada nos Secrets do repositório e consulte o log de commentary.py.';
 }
 load();setInterval(load,60000);
+
+// Aba independente: a página principal não depende do download do arquivo por seção.
+let secManifest=null, secRows=[], secFiltered=[], secOffset=0;
+const secColor=(n)=>n===0?' class="zero"':'';
+function showTab(which){
+ $('overview-page').hidden=which!=='overview';$('sections-page').hidden=which!=='sections';
+ $('tab-overview').classList.toggle('active',which==='overview');$('tab-sections').classList.toggle('active',which==='sections');
+ if(which==='sections'&&!secManifest)loadSectionManifest();
+}
+$('tab-overview').onclick=()=>showTab('overview');$('tab-sections').onclick=()=>showTab('sections');
+async function sectionGzip(uf){
+ const res=await fetch('data/sections/'+uf+'.json.gz?t='+Date.now(),{cache:'no-store'});
+ if(!res.ok)throw Error('Arquivo de '+uf+' não publicado (HTTP '+res.status+')');
+ if(!('DecompressionStream' in window))throw Error('Navegador não suporta DecompressionStream; atualize o navegador');
+ const raw=await res.arrayBuffer();
+ const bytes=new Uint8Array(raw);
+ if(bytes[0]===0x1f && bytes[1]===0x8b){
+  const stream=new Blob([raw]).stream().pipeThrough(new DecompressionStream('gzip'));
+  return JSON.parse(await new Response(stream).text());
+ }
+ return JSON.parse(new TextDecoder().decode(raw));
+}
+async function loadSectionManifest(){
+ try{
+  const res=await fetch('data/sections/index.json?t='+Date.now(),{cache:'no-store'});
+  if(!res.ok)throw Error('Dados por seção ainda não publicados pelo TSE ou ainda não processados pelo workflow.');
+  secManifest=await res.json();
+  $('section-message').textContent='Fonte: '+secManifest.source+' · Último processamento: '+new Date(secManifest.updated_at).toLocaleString('pt-BR');
+  const tbody=$('sections-summary');tbody.replaceChildren();
+  const sel=$('section-uf');sel.replaceChildren(new Option('Selecione UF',''));
+  for(const st of secManifest.states){
+   const tr=document.createElement('tr');
+   for(const v of [st.uf,nf.format(st.sections),nf.format(st.lula),nf.format(st.flavio),nf.format(st.zero_lula),nf.format(st.zero_flavio)]){
+    const td=document.createElement('td');td.textContent=v;tr.append(td);
+   }
+   tr.style.cursor='pointer';tr.onclick=()=>{sel.value=st.uf;selectUF()};tbody.append(tr);
+   sel.add(new Option(st.uf,st.uf));
+  }
+ }catch(e){$('section-message').textContent=e.message;}
+}
+async function selectUF(){
+ const uf=$('section-uf').value;secRows=[];secFiltered=[];
+ $('section-city').replaceChildren(new Option('Todos os municípios',''));
+ $('sections-rows').replaceChildren();$('section-counter').textContent=uf?'Carregando '+uf+'...':'Selecione uma UF.';
+ if(!uf)return;
+ try{
+  const data=await sectionGzip(uf);secRows=data.rows;
+  const cities=new Map();for(const r of secRows)cities.set(r[0],r[1]);
+  for(const [id,name] of [...cities].sort((a,b)=>a[1].localeCompare(b[1],'pt-BR')))$('section-city').add(new Option(name,id));
+  filterSections();
+ }catch(e){$('section-counter').textContent=e.message;}
+}
+function filterSections(){
+ const city=$('section-city').value,z=$('section-zone').value.trim(),s=$('section-number').value.trim(),mode=$('section-zero').value;
+ secFiltered=secRows.filter(r=> (!city||r[0]===city) && (!z||Number(r[2])===Number(z)) && (!s||Number(r[3])===Number(s)) &&
+ (mode==='all'||(mode==='l0'&&r[4]===0&&r[5]>0)||(mode==='f0'&&r[5]===0&&r[4]>0)||(mode==='both'&&r[4]>0&&r[5]>0)));
+ secOffset=0;$('sections-rows').replaceChildren();$('section-counter').textContent=nf.format(secFiltered.length)+' seções encontradas';moreSections();
+}
+function moreSections(){
+ const end=Math.min(secOffset+100,secFiltered.length);const frag=document.createDocumentFragment();
+ for(let i=secOffset;i<end;i++){
+  const r=secFiltered[i];const tr=document.createElement('tr');
+  const vals=[r[1],Number(r[2])+' / '+Number(r[3]),nf.format(r[4]),nf.format(r[5]),nf.format(r[4]+r[5])];
+  for(let j=0;j<vals.length;j++){const td=document.createElement('td');td.textContent=vals[j];if((j===2&&r[4]===0)||(j===3&&r[5]===0))td.className='zero';tr.append(td)}
+  frag.append(tr);
+ }
+ $('sections-rows').append(frag);secOffset=end;
+ $('section-visible').textContent=nf.format(end)+' de '+nf.format(secFiltered.length);
+ $('section-more').hidden=end>=secFiltered.length;
+}
+$('section-uf').onchange=selectUF;
+for(const id of ['section-city','section-zero'])$(id).onchange=filterSections;
+for(const id of ['section-zone','section-number'])$(id).oninput=filterSections;
+$('section-more').onclick=moreSections;
+
 </script></body></html>
