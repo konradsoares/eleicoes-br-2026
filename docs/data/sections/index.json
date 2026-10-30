@@ -1,0 +1,256 @@
+{
+  "available": true,
+  "source": "TSE - Presidente - Votação por seção eleitoral - 2026",
+  "scope": "2o turno, votos nominais 13 e 22",
+  "updated_at": "2026-10-30T08:13:51.935689+00:00",
+  "states": [
+    {
+      "uf": "AC",
+      "sections": 2270,
+      "municipalities": 22,
+      "lula": 144513,
+      "flavio": 287715,
+      "zero_lula": 0,
+      "zero_flavio": 3
+    },
+    {
+      "uf": "AL",
+      "sections": 7101,
+      "municipalities": 102,
+      "lula": 1152621,
+      "flavio": 744140,
+      "zero_lula": 0,
+      "zero_flavio": 0
+    },
+    {
+      "uf": "AM",
+      "sections": 8157,
+      "municipalities": 62,
+      "lula": 1145783,
+      "flavio": 975245,
+      "zero_lula": 0,
+      "zero_flavio": 30
+    },
+    {
+      "uf": "AP",
+      "sections": 1914,
+      "municipalities": 16,
+      "lula": 222968,
+      "flavio": 198674,
+      "zero_lula": 0,
+      "zero_flavio": 0
+    },
+    {
+      "uf": "BA",
+      "sections": 35476,
+      "municipalities": 417,
+      "lula": 6485258,
+      "flavio": 2608761,
+      "zero_lula": 0,
+      "zero_flavio": 4
+    },
+    {
+      "uf": "CE",
+      "sections": 23765,
+      "municipalities": 184,
+      "lula": 4036124,
+      "flavio": 1819478,
+      "zero_lula": 0,
+      "zero_flavio": 2
+    },
+    {
+      "uf": "DF",
+      "sections": 6969,
+      "municipalities": 1,
+      "lula": 825224,
+      "flavio": 979542,
+      "zero_lula": 0,
+      "zero_flavio": 0
+    },
+    {
+      "uf": "ES",
+      "sections": 9844,
+      "municipalities": 78,
+      "lula": 1001965,
+      "flavio": 1294504,
+      "zero_lula": 0,
+      "zero_flavio": 1
+    },
+    {
+      "uf": "GO",
+      "sections": 15686,
+      "municipalities": 246,
+      "lula": 1585555,
+      "flavio": 2345334,
+      "zero_lula": 0,
+      "zero_flavio": 0
+    },
+    {
+      "uf": "MA",
+      "sections": 18093,
+      "municipalities": 217,
+      "lula": 2808231,
+      "flavio": 1229971,
+      "zero_lula": 0,
+      "zero_flavio": 20
+    },
+    {
+      "uf": "MG",
+      "sections": 52062,
+      "municipalities": 853,
+      "lula": 6351099,
+      "flavio": 6241786,
+      "zero_lula": 0,
+      "zero_flavio": 2
+    },
+    {
+      "uf": "MS",
+      "sections": 7106,
+      "municipalities": 79,
+      "lula": 628973,
+      "flavio": 927892,
+      "zero_lula": 0,
+      "zero_flavio": 1
+    },
+    {
+      "uf": "MT",
+      "sections": 8287,
+      "municipalities": 142,
+      "lula": 694167,
+      "flavio": 1351099,
+      "zero_lula": 0,
+      "zero_flavio": 5
+    },
+    {
+      "uf": "PA",
+      "sections": 20827,
+      "municipalities": 144,
+      "lula": 2690449,
+      "flavio": 2199940,
+      "zero_lula": 2,
+      "zero_flavio": 16
+    },
+    {
+      "uf": "PB",
+      "sections": 10712,
+      "municipalities": 223,
+      "lula": 1794059,
+      "flavio": 865210,
+      "zero_lula": 0,
+      "zero_flavio": 1
+    },
+    {
+      "uf": "PE",
+      "sections": 21418,
+      "municipalities": 185,
+      "lula": 4117513,
+      "flavio": 1832554,
+      "zero_lula": 0,
+      "zero_flavio": 1
+    },
+    {
+      "uf": "PI",
+      "sections": 10225,
+      "municipalities": 224,
+      "lula": 1653989,
+      "flavio": 525859,
+      "zero_lula": 0,
+      "zero_flavio": 1
+    },
+    {
+      "uf": "PR",
+      "sections": 27142,
+      "municipalities": 399,
+      "lula": 2566504,
+      "flavio": 4291444,
+      "zero_lula": 0,
+      "zero_flavio": 1
+    },
+    {
+      "uf": "RJ",
+      "sections": 37675,
+      "municipalities": 92,
+      "lula": 4565393,
+      "flavio": 5169033,
+      "zero_lula": 0,
+      "zero_flavio": 0
+    },
+    {
+      "uf": "RN",
+      "sections": 8115,
+      "municipalities": 167,
+      "lula": 1413596,
+      "flavio": 737409,
+      "zero_lula": 0,
+      "zero_flavio": 0
+    },
+    {
+      "uf": "RO",
+      "sections": 4698,
+      "municipalities": 52,
+      "lula": 294446,
+      "flavio": 674382,
+      "zero_lula": 0,
+      "zero_flavio": 1
+    },
+    {
+      "uf": "RR",
+      "sections": 1519,
+      "municipalities": 15,
+      "lula": 83505,
+      "flavio": 219675,
+      "zero_lula": 0,
+      "zero_flavio": 8
+    },
+    {
+      "uf": "RS",
+      "sections": 27547,
+      "municipalities": 497,
+      "lula": 2824552,
+      "flavio": 3874378,
+      "zero_lula": 2,
+      "zero_flavio": 2
+    },
+    {
+      "uf": "SC",
+      "sections": 17326,
+      "municipalities": 295,
+      "lula": 1418314,
+      "flavio": 3220071,
+      "zero_lula": 0,
+      "zero_flavio": 0
+    },
+    {
+      "uf": "SE",
+      "sections": 5923,
+      "municipalities": 75,
+      "lula": 989041,
+      "flavio": 433354,
+      "zero_lula": 0,
+      "zero_flavio": 0
+    },
+    {
+      "uf": "SP",
+      "sections": 103656,
+      "municipalities": 645,
+      "lula": 12119274,
+      "flavio": 14139178,
+      "zero_lula": 0,
+      "zero_flavio": 0
+    },
+    {
+      "uf": "TO",
+      "sections": 4384,
+      "municipalities": 139,
+      "lula": 442962,
+      "flavio": 467916,
+      "zero_lula": 0,
+      "zero_flavio": 7
+    }
+  ],
+  "records_parsed": 995684,
+  "sha256": "c928321f63f2d095706fca73d4607c048d2ada23bda6876455d6911aaf1bc9c1",
+  "source_url": "backup local",
+  "source_filename": "votacao_secao_2026_BR.zip",
+  "imported_at": "2026-10-30T08:13:52.017407+00:00"
+}
